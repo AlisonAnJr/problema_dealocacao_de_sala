@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 //classe horario
 class Horario{
     private:
@@ -85,38 +84,56 @@ class Turma{
 
 class GradeSeamanal{
     private:
-        vector<int> dias = {1, 2, 3, 4, 5};
-        map<string, Sala> salas = {{"C1", Sala("C1", 70)}, {"C2", Sala("C2", 30)}, {"C3", Sala("C3", 20)},
-                               {"C4", Sala("C4", 70)}, {"C5", Sala("C5", 20)}, {"C6", Sala("C6", 20)},
-                               {"C7", Sala("C7", 30)}};
-        vector<Horario> horarios = {Horario("H1"), Horario("H2"), Horario("H3"), Horario("H4")};
-        vector<vector<vector<int>>> grade;
+        vector<string> dias = {"segunda", "terca", "quarta", "quinta", "sexta"};
+
     public:
-        void GradeSemanal(map<string, Sala> aSalas, vector<int> aDias, vector<Horario> aHorarios){
-            /*a ideia aqui é uma grade onde com 5 dias, 7 salas, 4 horarios,
-            seria uma grade para cada dia, ai seria uma matriz 4x7 (horario)(sala)*/
+        void GradeSemanal(){
+            
         }
 
 };
 
-int main(){
-    /*codigo função main*/
-    //container com os dias e os numeros refente a esses dias
-    //vector<string> semana= {"Segunda", "Terca", "Quarta", "Quinta", "Sexta"};
-    /*for(dia : semana){
-        bla
-    }*/
-    
-    //container com as salas ja instanciando os objetos sala 
-    /*map<string, Sala> salas = {{"C1", Sala("C1", 70)}, {"C2", Sala("C2", 30)}, {"C3", Sala("C3", 20)},
-                               {"C4", Sala("C4", 70)}, {"C5", Sala("C5", 20)}, {"C6", Sala("C6", 20)},
-                               {"C7", Sala("C7", 30)}};
-                               */
-    //array com os horarios a serem alocadas as turmas
-    //vector<Horario> horarios = {Horario("H1"), Horario("H2"), Horario("H3"), Horario("H4")};
+class Alocacao{
+    private:
+        Sala sala;
+        Turma turma;
+    public:
+        Alocacao(Sala aSala, Turma aTurma){
+            setSala(aSala);
+            setTurma(aTurma);
+        }
+        //set get sala
+        void setSala(Sala aSala){
+            sala = aSala;
+        }
+        Sala getSala(){
+            return sala;
+        }
+        //set get turma
+        void setTurma(Turma aTurma){
+            turma = aTurma;
+        }
+        Turma getTurma(){
+            return turma;
+        }
 
-    //vector<vector<vector<int>>> gradeSemanal = {/*dia*/{/*horario*/{/*sala*/}}};
-    
+};
+
+
+int main(){
+    const int max_turmas = 140;
+    int num_turma = 0;
+    vector<Turma> turmas;
+
+    vector<Sala> salas = {Sala("C1", 70), Sala("C2", 30), Sala("C3", 20), Sala("C4", 70),
+                            Sala("C5", 20), Sala("C6", 20), Sala("C7", 30)};
+
+    vector<Horario> horarios = {Horario("H1"), Horario("H2"), Horario("H3"), Horario("H4")};
+        
+
+    while(num_turma < max_turmas){
+
+    }
 
     return 0;
 }
