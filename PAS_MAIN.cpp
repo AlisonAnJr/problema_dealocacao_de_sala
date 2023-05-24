@@ -214,7 +214,7 @@ int main()
 
         }
 
-        cout << "Deseja alocar outro dia? (S/N): ";
+        cout << "\nDeseja alocar outro dia? (S/N): ";
         cin >> alocarOutroDia;
         if(alocarOutroDia == 'N' || alocarOutroDia == 'n')
         {
